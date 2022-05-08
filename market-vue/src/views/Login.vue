@@ -1,25 +1,40 @@
 <template>
   <div class="login-container">
     <!-- 头部 -->
-    <div class="header">
-      <div class="logo">
+    <div class="login-header">
+      <div class="login-header-logo">
         <img src="@/assets/logo.png" alt="">
         <h3>B&nbspI&nbspS&nbspT&nbspU</h3>
       </div>
     </div>
 
     <!-- 主体 -->
-    <div class="body">
-      <div class="login-box">
-        <div class="window">
-
+    <div class="login-body">
+      <div class="login-body-box">
+        <div class="login-body-window">
+          <div class="login-body-headtext">
+            <h3>账号登陆</h3>
+            <h4>每一天，欢乐充斥校园</h4>
+          </div>
+          <el-form ref="logform" label-width="80px">
+            <el-form-item label="用户名：">
+              <el-input v-model="userAccount" style="width: 280px"></el-input>
+            </el-form-item>
+            <el-form-item label="密码：">
+              <el-input v-model="userPwd" style="width: 280px"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" style="margin-left: 45px;margin-top: 50px">登陆</el-button>
+              <el-button type="info">重置</el-button>
+            </el-form-item>
+          </el-form>
         </div>
       </div>
-      <div class="img-box"></div>
+      <div class="login-body-imgbox"></div>
     </div>
 
     <!-- 底部 -->
-    <div class="footer">
+    <div class="login-footer">
 
     </div>
   </div>
@@ -27,7 +42,14 @@
 
 <script>
 export default {
-  name: 'Login'
+  name: 'Login',
+  data() {
+    return {
+      labelPosition: 'left',
+      userAccount: '',
+      userPwd: ''
+    }
+  }
 }
 </script>
 
@@ -37,24 +59,53 @@ export default {
     margin: 0px;
   }
 
+  /* 登录框背景图 */
+  @keyframes logWindowBgcMove {
+    0%, 100% {
+      background-position-y: -50px;
+      background-position-x: 0px;
+    }
+    10%, 90% {
+      background-position-y: -90px;
+      background-position-x: -20px;
+
+    }
+    20%, 80% {
+      background-position-y: -180px;
+      background-position-x: -40px;
+    }
+    30%, 70% {
+      background-position-y: -270px;
+      background-position-x: -60px;
+    }
+    40%, 60% {
+      background-position-y: -360px;
+      background-position-x: -80px;
+    }
+    50% {
+      background-position-y: -400px;
+      background-position-x: -100px;
+    }
+  }
+
   /* 头部模块 */
-  .header {
+  .login-header {
     min-height: 50px;
     background-color: #0086CF;
   }
 
-  .header .logo {
+  .login-header .login-header-logo {
     height: 50px;
   }
 
-  .header .logo img {
+  .login-header .login-header-logo img {
     vertical-align: middle;
     width: 50px;
     margin-left: 40px;
     margin-top: -15px;
   }
 
-  .header .logo h3 {
+  .login-header .login-header-logo h3 {
     display: inline-block;
     line-height: 50px;
     padding-left: 5px;
@@ -63,36 +114,59 @@ export default {
   }
 
   /* 主体模块 */
-  .body {
+  .login-body {
     display: flex;
     height: 640px;
-    background-color: pink;
   }
 
-  .body .login-box {
+  .login-body .login-body-box {
     overflow: hidden;
     width: 500px;
     height: 100%;
-    background-color: skyblue;
+    background-image: url('../assets/background_1.png');
+    background-repeat: no-repeat;
+    background-size: 600px;
+    animation: logWindowBgcMove 10s linear infinite;
   }
   
-  .body .login-box .window {
+  .login-body .login-body-box .login-body-window {
     height: 540px;
     width: 80%;
     margin-top: 50px;
     margin-left: 10%;
-    background-color: white;
+    background-color: #5BD2F5;
+    border-radius: 20px;
   }
 
-  .body .img-box {
+  .login-body .login-body-box .login-body-window .login-body-headtext {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-size: 25px;
+    color: #eee;
+  }
+
+  .login-body .login-body-box .login-body-window .login-body-headtext h4 {
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+
+  .login-body .login-body-box .login-body-window hr {
+    margin-bottom: 40px;
+  }
+
+  .login-body .login-body-imgbox {
     flex: 1;
-    background-color: red;
+    background-image: url('../assets/img_3.webp');
+    background-repeat: no-repeat;
+    background-size: 1100px;
   }
 
   /* 底部模块 */
-  .footer {
-    height: 120px;
+  .login-footer {
+    height: 80px;
     width: 100%;
-    background-color: gray;
+    background-color: #0086CF;
   }
 </style>
