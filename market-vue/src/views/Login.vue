@@ -10,7 +10,13 @@
 
     <!-- 主体 -->
     <div class="login-body">
+      <!-- 左侧登录框 -->
       <div class="login-body-box">
+        <div class="login-body-reg">
+          <router-link to="/reg">
+            <img src="../assets/reg_icon.png" alt="">
+          </router-link>
+        </div>
         <div class="login-body-window">
           <div class="login-body-headtext">
             <h3>账号登陆</h3>
@@ -30,6 +36,7 @@
           </el-form>
         </div>
       </div>
+      <!-- 右侧背景图 -->
       <div class="login-body-imgbox"></div>
     </div>
 
@@ -59,7 +66,7 @@ export default {
     margin: 0px;
   }
 
-  /* 登录框背景图 */
+  /* 登录框背景动画 */
   @keyframes logWindowBgcMove {
     0%, 100% {
       background-position-y: -50px;
@@ -120,6 +127,7 @@ export default {
   }
 
   .login-body .login-body-box {
+    position: relative;
     overflow: hidden;
     width: 500px;
     height: 100%;
@@ -127,6 +135,22 @@ export default {
     background-repeat: no-repeat;
     background-size: 600px;
     animation: logWindowBgcMove 10s linear infinite;
+  }
+
+  .login-body .login-body-box .login-body-reg {
+    position: absolute;
+    left: 410px;
+    top: 130px;
+    width: 40px;
+    height: 22px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: rgb(145, 128, 229);
+    box-shadow: 2px 2px 3px 0px rgb(108, 81, 81);
+  }
+
+  .login-body .login-body-box .login-body-reg img {
+    width: 40px;
   }
   
   .login-body .login-body-box .login-body-window {

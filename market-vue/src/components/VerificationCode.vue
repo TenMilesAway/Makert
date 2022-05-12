@@ -112,5 +112,7 @@
 </script>
 
 <style scoped>
-
+  .reg-container canvas {
+    cursor: pointer;
+  }
 </style>
