@@ -1,12 +1,7 @@
 <template>
   <div class="reg-container">
     <!-- 头部 -->
-    <div class="reg-header">
-      <div class="reg-header-logo">
-        <img src="@/assets/logo.png" alt="">
-        <h3>B&nbspI&nbspS&nbspT&nbspU</h3>
-      </div>
-    </div>
+    <market-header></market-header>
 
     <!-- 主体 -->
     <div class="reg-body">
@@ -84,10 +79,12 @@
 
 <script>
   import VerificationCode from '@/components/VerificationCode.vue'
+  import MarketHeader from '@/components/MarketHeader.vue';
   export default {
     name: 'Register',
     components: {
-      VerificationCode
+      VerificationCode,
+      MarketHeader
     },
     data() {
       // 验证所用的匿名箭头函数
@@ -254,31 +251,6 @@
   * {
     padding: 0px;
     margin: 0px;
-  }
-
-  /* 头部模块 */
-  .reg-header {
-    min-height: 50px;
-    background-color: #0086CF;
-  }
-
-  .reg-header .reg-header-logo {
-    height: 50px;
-  }
-
-  .reg-header .reg-header-logo img {
-    vertical-align: middle;
-    width: 50px;
-    margin-left: 40px;
-    margin-top: -15px;
-  }
-
-  .reg-header .reg-header-logo h3 {
-    display: inline-block;
-    line-height: 50px;
-    padding-left: 5px;
-    color: white;
-    font-size: 24px;
   }
 
   /* 主体模块 */

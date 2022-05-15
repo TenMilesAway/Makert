@@ -1,12 +1,7 @@
 <template>
   <div class="login-container">
     <!-- 头部 -->
-    <div class="login-header">
-      <div class="login-header-logo">
-        <img src="@/assets/logo.png" alt="">
-        <h3>B&nbspI&nbspS&nbspT&nbspU</h3>
-      </div>
-    </div>
+    <market-header></market-header>
 
     <!-- 主体 -->
     <div class="login-body">
@@ -48,6 +43,8 @@
 </template>
 
 <script>
+import MarketHeader from '@/components/MarketHeader.vue'
+
 export default {
   name: 'Login',
   data() {
@@ -56,6 +53,9 @@ export default {
       userAccount: '',
       userPwd: ''
     }
+  },
+  components: {
+    MarketHeader
   }
 }
 </script>
@@ -93,31 +93,6 @@ export default {
       background-position-y: -400px;
       background-position-x: -100px;
     }
-  }
-
-  /* 头部模块 */
-  .login-header {
-    min-height: 50px;
-    background-color: #0086CF;
-  }
-
-  .login-header .login-header-logo {
-    height: 50px;
-  }
-
-  .login-header .login-header-logo img {
-    vertical-align: middle;
-    width: 50px;
-    margin-left: 40px;
-    margin-top: -15px;
-  }
-
-  .login-header .login-header-logo h3 {
-    display: inline-block;
-    line-height: 50px;
-    padding-left: 5px;
-    color: white;
-    font-size: 24px;
   }
 
   /* 主体模块 */
