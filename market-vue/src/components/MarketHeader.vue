@@ -15,15 +15,9 @@
                 商城主页
               </router-link>
             </li>
-            <li>
-              我的店铺
-            </li>
-            <li>
-              我的订单
-            </li>
-            <li>
-              购物车
-            </li>
+            <li>我的店铺</li>
+            <li>我的订单</li>
+            <li>购物车</li>
           </ul>
         </div>
         <div class="login-header-navigation-headPortrait"></div>
